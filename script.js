@@ -176,7 +176,7 @@ function resizeTray () {
         trayControls.style.flexDirection = 'column';
         trayControls.style.justifyContent = 'space-between';
         menu.style.justifyContent = 'space-between';
-
+        header.style.height = `60px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
         for (var i = 0; i < itemMenuList.length; i++) {
@@ -239,7 +239,7 @@ function resizeTray () {
         trayControls.style.flexDirection = 'column';
         trayControls.style.justifyContent = 'space-between';
         menu.style.justifyContent = 'space-between';
-
+        header.style.height = `45px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
         for (var i = 0; i < itemMenuList.length; i++) {
@@ -307,7 +307,7 @@ function resizeTray () {
         trayControls.style.flexDirection = 'row';
         trayControls.style.justifyContent = 'center';
         menu.style.justifyContent = 'center';
-
+        header.style.height = `60px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
         for (var i = 0; i < itemMenuList.length; i++) {
