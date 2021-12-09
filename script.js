@@ -283,7 +283,7 @@ function resizeTray () {
             traySize = toolContainer.getBoundingClientRect().width * 0.7;
         }
 
-        tray.style.width = `${traySize}px`;
+        tray.style.width = `${traySize}px`; 
         tray.style.height = `${traySize}px`;
 
         sumTray.style.height = `${toolContainer.getBoundingClientRect().height * 0.1}px`;
@@ -291,7 +291,7 @@ function resizeTray () {
         trayControls.style.width = `${toolContainer.getBoundingClientRect().width * 0.18}px`;
         trayControls.style.height = `${trayContainer.getBoundingClientRect().height * 0.8}px`;
         menu.style.width = `${toolContainer.getBoundingClientRect().width * 0.08}px`;
-        //menu.style.height = `${toolContainer.getBoundingClientRect().height * 0.30}px`;
+        menu.style.height = `${trayContainer.getBoundingClientRect().height * 0.95}px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
         for (var i = 0; i < itemMenuList.length; i++) {
