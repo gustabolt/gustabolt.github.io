@@ -264,8 +264,8 @@ function resizeTray () {
         section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
 
         // limitador do mínimo da section1
-        if (window.innerHeight - header.getBoundingClientRect().height < 300) {
-            section1.style.height = '300px';
+        if (window.innerHeight - header.getBoundingClientRect().height < 250) {
+            section1.style.height = '250px';
         }
 
         traySize = (Math.sqrt((Math.pow(toolContainer.getBoundingClientRect().width, 2)) + (Math.pow(toolContainer.getBoundingClientRect().height, 2)))) * 0.5; 
@@ -291,11 +291,11 @@ function resizeTray () {
         trayControls.style.width = `${toolContainer.getBoundingClientRect().width * 0.18}px`;
         trayControls.style.height = `${trayContainer.getBoundingClientRect().height * 0.8}px`;
         menu.style.width = `${toolContainer.getBoundingClientRect().width * 0.08}px`;
-        menu.style.height = `${trayContainer.getBoundingClientRect().height * 0.95}px`;
+        //menu.style.height = `${toolContainer.getBoundingClientRect().height * 0.30}px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
         for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.width = `unset`;
+            itemMenuList[i].style.width = `unset`;  
         }
 
         customizableNumber.style.width = `${traySize * 0.15}px`;
