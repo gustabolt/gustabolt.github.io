@@ -152,9 +152,6 @@ header {
 }
 
 .itemMenu:hover {
-    background-color: rgb(99, 99, 99);
-    /*background-color: #403368;*/
-    /*color: rgb(180, 180, 180);*/
     cursor: pointer;
 }
 
@@ -292,13 +289,11 @@ input[type=number] {
 }
 
 #alertClose:hover, #customizableMenuOK:hover, #customizableMenuClose:hover, #alertCloseEmpty:hover {
-    background-color: rgb(94, 94, 94);
-    /*background-color: #656477;*/
     cursor: pointer;
 }
 
 #alertClose:active, #customizableMenuOK:active, #customizableMenuClose:active, #alertCloseEmpty:active {
-    background-color: rgb(58, 58, 58);
+    background-color: rgb(116, 26, 26);
     /*background-color: #4c4c5a;*/
 }
 
@@ -523,8 +518,6 @@ input[type=number] {
 }
 
 .historicButton:hover, #deleteHistoricContainer:hover {
-    background-color: #363638;
-    /*background-color: #656477;*/
     cursor: pointer;
 }
 
@@ -560,8 +553,8 @@ input[type=number] {
     -khtml-user-select: none; /* Konqueror HTML */
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* Internet Explorer/Edge */
-    background-color: #4a4a53;
-    color: #ffffff;
+    background-color: rgb(222, 221, 231);
+    color: #000000;
 
 }
 
@@ -578,8 +571,6 @@ input[type=number] {
 
 
 .button:hover {
-    /*background-color: #403368;*/
-    background-color: rgb(99, 99, 99);
 
     cursor: pointer;
 }
@@ -621,3 +612,24 @@ footer {
         font-size: 16px;
     }
 }
+/*
+@media (hover: hover) {
+    .itemMenu:hover {
+        background-color: rgb(99, 99, 99);
+        cursor: pointer;
+    }
+    #alertClose:hover, #customizableMenuOK:hover, #customizableMenuClose:hover, #alertCloseEmpty:hover {
+        background-color: rgb(94, 94, 94);
+        cursor: pointer;
+    }
+    .historicButton:hover, #deleteHistoricContainer:hover {
+        background-color: #363638;
+        /*background-color: #656477;
+        cursor: pointer;
+    }
+    .button:hover {
+        background-color: rgb(99, 99, 99);
+        cursor: pointer;
+    }
+  }
+  */

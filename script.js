@@ -354,11 +354,11 @@ function resizeTray () {
         tray.style.width = `${traySize}px`;
         tray.style.height = `${traySize}px`;
 
-        sumTray.style.height = `${traySize * 0.1}px`;
+        sumTray.style.height = `${traySize * 0.15}px`;
         sumTray.style.gap = `${traySize * 0.01}px`;
-        trayControls.style.height = `${traySize * 0.2}px`;
+        trayControls.style.height = `${traySize * 0.15}px`;
         trayControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
-        menu.style.height = `${traySize * 0.2}px`;
+        menu.style.height = `${traySize * 0.15}px`;
         menu.style.width = `${trayContainer.getBoundingClientRect().width}px`;
 
         var itemMenuList = document.getElementsByClassName('itemMenu');
@@ -398,8 +398,8 @@ function resizeHistoricControls () {
     for (var a2 = 0; a2 < arrowList.length; a2++) {
         arrowList[a2].style.width = `${tray.getBoundingClientRect().width / 30}px`;
         arrowList[a2].style.height = `${tray.getBoundingClientRect().width / 30}px`;
-        arrowList[a2].style.borderTop = `white ${tray.getBoundingClientRect().width / 150}px solid`;
-        arrowList[a2].style.borderRight = `white ${tray.getBoundingClientRect().width / 150}px solid`;
+        arrowList[a2].style.borderTop = `black ${tray.getBoundingClientRect().width / 150}px solid`;
+        arrowList[a2].style.borderRight = `black ${tray.getBoundingClientRect().width / 150}px solid`;
     }
         
 
