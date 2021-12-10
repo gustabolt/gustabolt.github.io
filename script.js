@@ -30,22 +30,16 @@ var linearPosY;
 var itemList;
 var cubeSize;
 var cubeList;
-
 var menuContainer = document.getElementById('menuContainer');
 var section1 = document.getElementById('section1');
-
 var timedAnimation;
 var timedReset;
 var timedJump;
-
 var sum = 0;
 var sumContainer = document.getElementById('sumContainer');
-
 var historicList = [];
 var historicListOrganized = [];
-
 var isSumming = false;
-
 var trayContainer = document.getElementById('trayContainer');
 var historicTitle = document.getElementById('historicTitle');
 var sumTray = document.getElementById('sumTray');
@@ -54,7 +48,6 @@ var alertContainer = document.getElementById('alertContainer');
 var alertMessage = document.getElementById('alertMessage');
 var alertClose = document.getElementById('alertClose');
 var customizableMenuContainer = document.getElementById('customizableMenuContainer');
-
 var customizableMessage = document.getElementById('customizableMessage');
 var customizableMenuOK = document.getElementById('customizableMenuOK');
 var customizableMenuClose = document.getElementById('customizableMenuClose');
@@ -73,11 +66,10 @@ var doc = document.getElementById('body');
 var logo1 = document.getElementById('logo1');
 var logo2 = document.getElementById('logo2');
 var fontSizeItem;
-
 var loading = document.getElementById('loading')
 var traySize;
 
-function sumResults () { // soma os resultados e alimenta o container da soma e o histórico
+function sumResults () { 
     
     if (isSumming == false) {
 
@@ -123,10 +115,8 @@ function sumResults () { // soma os resultados e alimenta o container da soma e 
         historicList = [];
         sum = 0;
 
-        //fixingElements();
         resizeHistoricContainer();
         
-
     }
 
     isSumming = false;
@@ -145,11 +135,8 @@ function setVar () {
         angularPosX = -30; 
         angularPosY = 0; 
         linearPosY = 0;
-        //gravity = 0.3;
-        //vy = -10;
 
         var diceBackgroundList = document.getElementsByClassName('diceBackground');
-        var diceHitBoxList = document.getElementsByClassName('diceHitBox');
         vy = -diceBackgroundList[0].getBoundingClientRect().height*0.025;
         gravity = diceBackgroundList[0].getBoundingClientRect().height*0.00075;
 
@@ -165,12 +152,9 @@ function setVar () {
     }
 };
 
-/*Redimensionamento*/
-
 function resizeTray () {
 
     if ((window.innerWidth > 500) && (window.innerHeight > 530)) {
-        console.log(1);
         tool.style.flexDirection = 'row';
         menu.style.flexDirection = 'column';
         trayControls.style.flexDirection = 'column';
@@ -205,12 +189,10 @@ function resizeTray () {
         menu.style.gap = `unset`;
         trayControls.style.gap = `unset`;
 
-        // limitador da altura
         if (traySize > (toolContainer.getBoundingClientRect().height * 0.85)) {
             traySize = toolContainer.getBoundingClientRect().height * 0.85;
         }
 
-        // limitador da largura
         if (traySize > (toolContainer.getBoundingClientRect().width * 0.7)) {
             traySize = toolContainer.getBoundingClientRect().width * 0.7;
         }
@@ -233,7 +215,6 @@ function resizeTray () {
         customizableNumber.style.width = `${traySize * 0.15}px`;
 
     } else if ((window.innerWidth > 500) && (window.innerHeight < 530)) {
-        console.log(2);
         tool.style.flexDirection = 'row';
         menu.style.flexDirection = 'column';
         trayControls.style.flexDirection = 'column';
@@ -263,7 +244,6 @@ function resizeTray () {
 
         section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
 
-        // limitador do mínimo da section1
         if (window.innerHeight - header.getBoundingClientRect().height < 250) {
             section1.style.height = '250px';
         }
@@ -273,12 +253,10 @@ function resizeTray () {
         menu.style.gap = `unset`;
         trayControls.style.gap = `unset`;
 
-        // limitador da altura
         if (traySize > (toolContainer.getBoundingClientRect().height * 0.85)) {
             traySize = toolContainer.getBoundingClientRect().height * 0.85;
         }
 
-        // limitador da largura
         if (traySize > (toolContainer.getBoundingClientRect().width * 0.7)) {
             traySize = toolContainer.getBoundingClientRect().width * 0.7;
         }
@@ -331,7 +309,6 @@ function resizeTray () {
 
         section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
 
-        // limitador do mínimo
         if (window.innerHeight - header.getBoundingClientRect().height < 420) {
             section1.style.height = '420px';
         }
@@ -341,12 +318,10 @@ function resizeTray () {
         menu.style.gap = `${traySize * 0.03}px`;
         trayControls.style.gap = `${traySize * 0.06}px`
 
-        // limitador da largura
         if (traySize > (toolContainer.getBoundingClientRect().width * 0.95)) {
             traySize = toolContainer.getBoundingClientRect().width * 0.95;
         }
 
-        // limitador da altura
         if (traySize > (toolContainer.getBoundingClientRect().height * 0.70)) {
             traySize = toolContainer.getBoundingClientRect().height * 0.70;
         }
@@ -356,7 +331,7 @@ function resizeTray () {
 
         sumTray.style.height = `${traySize * 0.15}px`;
         sumTray.style.gap = `${traySize * 0.01}px`;
-        trayControls.style.height = `${traySize * 0.15}px`;
+        trayControls.style.height = `${traySize * 0.1}px`;
         trayControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
         menu.style.height = `${traySize * 0.15}px`;
         menu.style.width = `${trayContainer.getBoundingClientRect().width}px`;
@@ -385,21 +360,16 @@ function resizeHistoricContainer () {
 function resizeHistoricControls () {
 
     historicControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
-    historicControls.style.height =  `${traySize * 0.15}px`;
-    //trayControls.style.height = `${traySize * 0.1}px`;
-    //trayControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
-
+    historicControls.style.height =  `${traySize * 0.1}px`;
     historic.style.borderTopWidth = `${tray.getBoundingClientRect().width / 200}px`;
-    
     historicControls.style.gap = `${traySize * 0.08}px`
 
     var arrowList = document.getElementsByClassName('arrow');
-
     for (var a2 = 0; a2 < arrowList.length; a2++) {
         arrowList[a2].style.width = `${tray.getBoundingClientRect().width / 30}px`;
         arrowList[a2].style.height = `${tray.getBoundingClientRect().width / 30}px`;
-        arrowList[a2].style.borderTop = `black ${tray.getBoundingClientRect().width / 150}px solid`;
-        arrowList[a2].style.borderRight = `black ${tray.getBoundingClientRect().width / 150}px solid`;
+        arrowList[a2].style.borderTop = `#444444 ${tray.getBoundingClientRect().width / 150}px solid`;
+        arrowList[a2].style.borderRight = `#444444 ${tray.getBoundingClientRect().width / 150}px solid`;
     }
         
 
@@ -415,7 +385,6 @@ function fixingElements () {
     }
 
     historic.scroll(0, (historic.scrollTop + 1000));
-
     delay = 0;
 };
 
@@ -502,25 +471,6 @@ function translatedReset (div) {
     slidePosition = 0;
 };
 
-// controla o carrossel através dos botões de controle
-function slideControl (direction) {
-    if (direction == 'forward') {
-        if (slide.getBoundingClientRect().height > slide.getBoundingClientRect().width) { // se o carrossel estiver na vertical
-            slideContainer.scroll(0, (slideContainer.scrollTop + 100));
-        } else {  // se estiver na horizontal ou quadrado
-            slideContainer.scroll((slideContainer.scrollLeft + 100), 0);
-        }
-    }
-    if (direction == 'backward') {
-        if (slide.getBoundingClientRect().height > slide.getBoundingClientRect().width) {   // vertical
-            slideContainer.scroll(0, (slideContainer.scrollTop - 100));
-        } else {   // se estiver na horizontal ou quadrado
-            slideContainer.scroll((slideContainer.scrollLeft - 100), 0);
-        }
-    }
-};
-
-// controla o histórico
 function historicControl (direction) {
     if (direction == 'down') {
         historic.scroll(0, (historic.scrollTop + 100));
@@ -529,8 +479,6 @@ function historicControl (direction) {
         historic.scroll(0, (historic.scrollTop - 100));
     }
 };
-
-/*Adição dos itens*/
 
 function addItem (qtd, numberOfSides) {
 
@@ -628,14 +576,11 @@ function addItem (qtd, numberOfSides) {
                     item.appendChild(diceBackground);
                     tray.appendChild(item);
                     
-                    // Arrumando os tamanhos
                     configItemSize();
 
-                    // Preenche lados
                     fillSides();
 
                 } else {
-                    //alert('A bandeja encheu!');
                     openAlert();
                     delay = 0;
                     return;
@@ -651,13 +596,13 @@ function addItem (qtd, numberOfSides) {
     }
 };
 
-function jump () { // animação do pulo e do giro
+function jump () { 
 
     if (isJumping == false && !resetNeeded) {
 
         setVar();
 
-        animateFaces(); // animação das faces, os números ficam mudando de modo aleatório
+        animateFaces(); 
 
         isJumping = true;
 
@@ -668,30 +613,25 @@ function jump () { // animação do pulo e do giro
             angularPosX += vax;
             angularPosY += vay;
 
-            // se bater no chão (aqui eu seto o chão um pouco mais abaixo)
             if (linearPosY > (itemSize*0.25)) {
                 linearPosY = itemSize*0.25;
                 vy *= -bouncePower;
                 bounced++;
             }
 
-            // limitar a variação angular em y
             if (angularPosY > 765) {
                 angularPosY = 765;
             }
 
-            // limitar a variação angular em x
             if (angularPosX > 0) {
                 angularPosX = 0;
             }
 
-            // movimento linear vertical
             var diceHitBoxList = document.getElementsByClassName('diceHitBox');
             for (var z = 0; z < diceHitBoxList.length; z++) {
                 diceHitBoxList[z].style.transform = `translateY(${linearPosY}px)`;
             }
             
-            // movimento angular em y, de giro
             var cubeList = document.getElementsByClassName('cube');
             for (var a = 0; a < cubeList.length; a++) {
                 cubeList[a].style.transform = `translateZ(-${cubeSize*4}px) rotateX(${angularPosX}deg) rotateY(${angularPosY}deg) translateX(-${cubeSize*0.5}px) translateY(-${cubeSize*1.45}px)`
@@ -710,7 +650,7 @@ function jump () { // animação do pulo e do giro
 
 };
 
-function animateFaces () { // anima todas as faces
+function animateFaces () { 
 
     timedAnimation = setInterval(() => {
 
@@ -742,8 +682,6 @@ function animateFaces () { // anima todas as faces
 
 function reset () {
     if (resetNeeded && !isJumping && !isReseting) { // se precisar resetar, NÃO está pulando e já NÃO está resetando
-
-        //setVar();
 
         isReseting = true;
 
@@ -869,14 +807,9 @@ function play () {
         };
         setTimeout(jump, delay);
     } else {
-        //alert('incluir um aviso igual ao da bandeja cheia')
         OpenAlertEmpty();
     }
 };
-
-tray.addEventListener(tray.childElementCount > 0, function () {
-    tray.style.backgroundImage = 'url(trayBackgroundWhite.svg)';
-});
 
 function refresh () {
     if (tray.childElementCount > 0) {
@@ -979,7 +912,7 @@ function customizableMenuOKPress () {
     var value = document.getElementById('customizableNumber').value;
     if (value < 2 || value > 999) {
         if (sideLimits.style.color == '') {
-            sideLimits.style.color = 'black';
+            sideLimits.style.color = '#c9c8c8';
             var blink = setInterval(() => {
                 sideLimits.style.color = '';
                 clearInterval(blink);
@@ -993,19 +926,12 @@ function customizableMenuOKPress () {
     }
 };
 
-// remove todos os caracteres que não sejam parte da lista, no caso, números
 function specificChars() {
     var pattern = /[^0-9]/g;
     var res = customizableNumber.value.replace(pattern, "");
     return res;
 }
-/*
-customizableNumber.addEventListener("input", function() {
-    customizableNumber.value = specificChars();
-});
-*/
 
-// retorna uma string formatada no padrão desejado, por exemplo: (##) #.####-####
 function adapt(pattern) {
     var filter = specificChars();
     var res = "";
@@ -1024,8 +950,6 @@ function adapt(pattern) {
 customizableNumber.addEventListener("input", function() {
     customizableNumber.value = adapt("###");
 });
-
-// loading screen
 
 document.documentElement.addEventListener("load", function(){
     document.getElementById("loading").style.display = "block";

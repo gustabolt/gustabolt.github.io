@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>jogar-dados</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.svg">
 </head>
 <body id="body">
 
-    <div id="loading">
-
-    </div>
+    <div id="loading"></div>
 
     <header id="header">
         <div id="logo">
-            <strong><span id="logo1">LOGO</span></strong> <strong><span id="logo2">TIPO</span></strong>
+            <strong><span id="logo1">JOGAR-DADOS</span></strong>
         </div>
     </header>
 
     <div id="bigBox" class="main">
-
 
         <div id="section1">
 
@@ -32,7 +29,7 @@
                             <div id="alertMessage">
                                 A bandeja está cheia!
                             </div>
-                            <div id="alertClose" onclick="closeAlert()">
+                            <div id="alertClose" class="button" onclick="closeAlert()">
                                 OK
                             </div>
                         </div>
@@ -42,7 +39,7 @@
                             <div id="alertMessageEmpty">
                                 Adicione um item!
                             </div>
-                            <div id="alertCloseEmpty" onclick="closeAlertEmpty()">
+                            <div id="alertCloseEmpty" class="button" onclick="closeAlertEmpty()">
                                 OK
                             </div>
                         </div>
@@ -53,14 +50,14 @@
                                 Número de lados: <div id="sideLimits"><input type="number" id="customizableNumber" maxlength="3"> (2 ➔ 999)</div>
                             </div>
                             <div id="customizableMessageButtons">
-                                <div id="customizableMenuOK" onclick="customizableMenuOKPress()">
+                                <div id="customizableMenuOK" class="button" onclick="customizableMenuOKPress()">
                                     OK
                                 </div>
-                                <div id="customizableMenuClose" onclick="closeCustomizableMenu()">
+                                <div id="customizableMenuClose" class="button" onclick="closeCustomizableMenu()">
                                     FECHAR
                                 </div>
                             </div>
-                        </div>
+                        </div>  
                     
                     </div>
                     <div id="menuContainer">
