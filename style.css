@@ -82,7 +82,7 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 270px;
+    min-width: 250px;
     height: 90%;
     border-radius: 5px;
 }
@@ -94,18 +94,18 @@ header {
     position: relative;
     max-width: 100%;
     border-radius: 5px;
-    padding: 1%;
     max-height: 100%;
-    background-color: #F2F2F2;
+    background-color: #f2f2f2;
+    padding: 2%;
 }
 
 #section2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #F2F2F2;
     border-radius: 5px;
-    padding: 1%;
+    background-color: #f2f2f2;
+    padding: 2%;
 }
 
 #menuContainer {

@@ -155,6 +155,7 @@ function setVar () {
 function resizeTray () {
 
     if ((window.innerWidth > 500) && (window.innerHeight > 530)) {
+        console.log(1);
         tool.style.flexDirection = 'row';
         menu.style.flexDirection = 'column';
         trayControls.style.flexDirection = 'column';
@@ -215,6 +216,7 @@ function resizeTray () {
         customizableNumber.style.width = `${traySize * 0.15}px`;
 
     } else if ((window.innerWidth > 500) && (window.innerHeight < 530)) {
+        console.log(2);
         tool.style.flexDirection = 'row';
         menu.style.flexDirection = 'column';
         trayControls.style.flexDirection = 'column';
