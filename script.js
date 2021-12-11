@@ -971,4 +971,3 @@ function hideBar () {
 }
 
 window.addEventListener("load", hideBar);
-window.addEventListener("resize", hideBar);
