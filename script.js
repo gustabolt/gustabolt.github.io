@@ -391,6 +391,7 @@ function fixingElements () {
 };
 
 window.addEventListener("resize", fixingElements);
+window.addEventListener("load", fixingElements);
 
 fixingElements();
 
@@ -772,6 +773,7 @@ function cancelAnimation () {
 
 window.addEventListener("resize", cancelAnimation);
 
+
 function fillSides () {
 
     var itemList = document.getElementsByClassName('item');
@@ -961,3 +963,12 @@ document.documentElement.addEventListener("load", function(){
 window.addEventListener("load", function(){
     document.getElementById("loading").style.display = "none";
 });
+
+function hideBar () {
+    setTimeout(function(){
+        window.scrollTo(0, 1);
+    }, 0);
+}
+
+window.addEventListener("load", hideBar);
+window.addEventListener("resize", hideBar);
