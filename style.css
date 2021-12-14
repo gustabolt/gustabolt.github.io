@@ -28,6 +28,7 @@ header {
     -khtml-user-select: none; 
     -moz-user-select: none; 
     -ms-user-select: none; 
+    height: 60px;
 }
 
 #logoImage {
@@ -74,6 +75,9 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 550px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 
@@ -82,8 +86,8 @@ header {
     justify-content: center;
     align-items: center;
     width: 100%;
-    min-width: 250px;
-    height: 90%;
+    min-width: 280px;
+    height: 100%;
     border-radius: 5px;
 }
 
@@ -97,6 +101,7 @@ header {
     max-height: 100%;
     background-color: #f2f2f2;
     padding: 2%;
+    height: 100%;
 }
 
 #section2 {
@@ -110,6 +115,7 @@ header {
 
 #menuContainer {
     display: flex;
+
     align-items: center; /* alinhamento vertical */
     justify-content: center; /*alinhamento horizontal*/
     position: relative;
@@ -118,7 +124,15 @@ header {
 
 #menu {
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     letter-spacing: 0;
+    width: 50px;
+    height: 400px;
+}
+
+#customizableNumber {
+    width: 50px;
 }
 
 .itemMenu {
@@ -135,6 +149,8 @@ header {
     border-bottom-left-radius: 5px;
     font-size: 30px;
     padding: 10%;
+    font-size: 25px;
+
 }
 
 #trayContainer {
@@ -383,6 +399,8 @@ input[type=number] {
     width: 80%;
     text-align: center;
     color: #444444;
+    height: 40px;
+    gap: 1%;
 }
 
 #historicContainer {
@@ -430,6 +448,7 @@ input[type=number] {
     padding: 3% 2% 2% 2%;
     border-bottom: #444444 solid;
     color: #444444;
+    font-size: 16px;
 }
 
 #historicControls {
@@ -446,7 +465,9 @@ input[type=number] {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 16px;
 }
+
 
 #historic::-webkit-scrollbar { 
     display: none;  
@@ -462,16 +483,26 @@ input[type=number] {
     cursor: pointer;
 }
 
+.arrow {
+    width: 15px;
+    height: 15px;
+
+}
+
 #arrowUp {
     transform: rotateZ(-45deg);
     position: relative;
     top: 50%;
+    border-top: #444444 3px solid;
+    border-right: #444444 3px solid;
 }
 
 #arrowDown {
     transform: rotateZ(135deg);
     position: relative;
     bottom: 50%;
+    border-top: #444444 3px solid;
+    border-right: #444444 3px solid;
 }
 
 .button {
@@ -496,7 +527,10 @@ input[type=number] {
 
 #trayControls {
     display: flex;
-    max-width: 130px;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    height: 250px;
 }
 
 
@@ -527,14 +561,203 @@ footer {
 
 }
 
-@media (max-width: 700px) {
-    * {
+@media (max-height: 650px) and (orientation: landscape) {
+    #section1 {
+        height: 490px;
+    }
+}
+
+@media (max-height: 580px) and (orientation: landscape) {
+    #section1 {
+        height: 430px;
+    }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+    #section1 {
+        height: 360px;
+    }
+    #menu {
+        height: 300px;
+    }
+    #trayControls {
+        height: 200px;
+        width: 150px;
+
+    }
+    .trayButton {
+        padding: 7%;
+    }
+}
+
+@media (max-height: 450px) and (orientation: landscape) {
+    header {
+        height: 50px;
+    }
+    #section1 {
+        height: 290px;
+    }
+    #sumTray {
+        height: 30px;
+        font-size: 16px;
+    }
+    #menu {
+        height: 250px;
+    }
+    .itemMenu {
+        padding: 5%;
+        font-size: 18px;
+    }
+    #trayControls {
+        height: 120px;
+        width: 100px;
+    }
+    .trayButton {
+        padding: 5%;
         font-size: 16px;
     }
 }
 
-@media (max-height: 500px) {
-    * {
+@media (max-height: 380px) and (orientation: landscape) {
+    #section1 {
+        height: 230px;
+    }
+    #sumTray {
+        height: 25px;
         font-size: 16px;
+    }
+    #menu {
+        height: 200px;
+    }
+    .itemMenu {
+        padding: 5%;
+        font-size: 18px;
+    }
+    #trayControls {
+        height: 120px;
+    }
+    .trayButton {
+        padding: 5%;
+        font-size: 16px;
+    }
+}
+
+@media (max-height: 320px) and (orientation: landscape) {
+    #section1 {
+        height: 180px;
+    }
+    #sumTray {
+        height: 20px;
+        font-size: 14px;
+    }
+    #menu {
+        height: 160px;
+    }
+    .itemMenu {
+        padding: 1%;
+        font-size: 16px;
+    }
+    #trayControls {
+        height: 120px;
+    }
+    .trayButton {
+        padding: 5%;
+        font-size: 16px;
+    }
+}
+
+/*Width*/
+
+@media (max-width: 590px) and (orientation: portrait) {
+    #section1 {
+        height: 570px;
+    }
+    #tool {
+        flex-direction: column;
+    }
+    #menu {
+        flex-direction: row;
+        height: 35px;
+        width: 380px;
+        justify-content: center;
+        gap: 5%;
+
+    }
+    .itemMenu {
+        border-top-right-radius: 5px;
+        border-bottom-left-radius: 0px;
+        justify-content: center;
+        font-size: 18px;
+        padding: 2%;
+        width: 35px;
+    }
+    #trayControls {
+        flex-direction: row;
+        justify-content: center;
+        width: 350px;
+        height: 50px;
+        gap: 6%
+
+    }
+    .trayButton {
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 0px;
+        padding: 2%;
+        font-size: 16px;
+    }
+    #sumTray {
+        height: 30px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 460px) and (orientation: portrait) { 
+    header {
+        height: 50px;
+    }
+    #section1 {
+        height: 520px;
+    }
+    #trayControls {
+        height: 40px;
+    }
+}
+
+@media (max-width: 390px) and (orientation: portrait) { 
+    #section1 {
+        height: 490px;
+    }
+    #menu {
+        gap: 3%;
+    }
+}
+
+@media (max-width: 375px) and (orientation: portrait) { 
+    #section1 {
+        height: 450px;
+    }
+    #menu {
+        gap: 2%;
+    }
+    #trayControls {
+        height: 35px;
+        gap: 3%;
+    }
+}
+
+@media (max-width: 315px) and (orientation: portrait) { 
+    #section1 {
+        height: 400px;
+    }
+    #menu {
+        gap: 2%;
+        height: 30px;
+    }
+    .itemMenu {
+        width: 30px;
+    }
+    #trayControls {
+        height: 30px;
+        gap: 2%;
     }
 }

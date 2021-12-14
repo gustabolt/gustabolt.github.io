@@ -152,204 +152,38 @@ function setVar () {
     }
 };
 
-function resizeTray () {
-
-    if ((window.innerWidth > 500) && (window.innerHeight > 530)) {
-        console.log(1);
-        tool.style.flexDirection = 'row';
-        menu.style.flexDirection = 'column';
-        trayControls.style.flexDirection = 'column';
-        trayControls.style.justifyContent = 'space-between';
-        menu.style.justifyContent = 'space-between';
-        header.style.height = `60px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.borderTopLeftRadius = '5px';
-            itemMenuList[i].style.borderTopRightRadius = '0px';
-            itemMenuList[i].style.borderBottomLeftRadius = '5px';
-            itemMenuList[i].style.padding = '10%';
-            itemMenuList[i].style.fontSize = '25px';
-        }
-
-        var trayButtonList = document.getElementsByClassName('trayButton');
-        for (var i = 0; i < trayButtonList.length; i++) {
-            trayButtonList[i].style.fontSize = '20px';
-            trayButtonList[i].style.padding = '10%';
-            trayButtonList[i].style.borderBottomLeftRadius = '0px';
-            trayButtonList[i].style.borderTopRightRadius = '5px';
-        }
-
-        sumTray.style.fontSize = '20px';
-        sumContainer.style.fontSize = '20px';
-
-        section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
-
-        traySize = (Math.sqrt((Math.pow(toolContainer.getBoundingClientRect().width, 2)) + (Math.pow(toolContainer.getBoundingClientRect().height, 2)))) * 0.5;       
-
-        menu.style.gap = `unset`;
-        trayControls.style.gap = `unset`;
-
+function newResizeTray () {
+    if (window.innerWidth <= 590) {
+        traySize = (Math.sqrt((Math.pow(toolContainer.getBoundingClientRect().width, 2)) + (Math.pow(toolContainer.getBoundingClientRect().height, 2)))) * 0.55;       
+        
         if (traySize > (toolContainer.getBoundingClientRect().height * 0.85)) {
             traySize = toolContainer.getBoundingClientRect().height * 0.85;
         }
-
-        if (traySize > (toolContainer.getBoundingClientRect().width * 0.7)) {
-            traySize = toolContainer.getBoundingClientRect().width * 0.7;
+    
+        if (traySize > (toolContainer.getBoundingClientRect().width * 0.9)) {
+            traySize = toolContainer.getBoundingClientRect().width * 0.9;
         }
 
         tray.style.width = `${traySize}px`;
         tray.style.height = `${traySize}px`;
-
-        sumTray.style.height = `${toolContainer.getBoundingClientRect().height * 0.1}px`;
-        sumTray.style.gap = `${toolContainer.getBoundingClientRect().height * 0.01}px`;
-        trayControls.style.width = `${toolContainer.getBoundingClientRect().width * 0.18}px`;
-        trayControls.style.height = `${trayContainer.getBoundingClientRect().height * 0.6}px`;
-        menu.style.width = `${toolContainer.getBoundingClientRect().width * 0.08}px`;
-        menu.style.height = `${trayContainer.getBoundingClientRect().height * 0.9}px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.width = `unset`;
-        }
-
-        customizableNumber.style.width = `${traySize * 0.15}px`;
-
-    } else if ((window.innerWidth > 500) && (window.innerHeight < 530)) {
-        console.log(2);
-        tool.style.flexDirection = 'row';
-        menu.style.flexDirection = 'column';
-        trayControls.style.flexDirection = 'column';
-        trayControls.style.justifyContent = 'space-between';
-        menu.style.justifyContent = 'space-between';
-        header.style.height = `45px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.borderTopLeftRadius = '5px';
-            itemMenuList[i].style.borderTopRightRadius = '0px';
-            itemMenuList[i].style.borderBottomLeftRadius = '5px';
-            itemMenuList[i].style.padding = '10%';
-            itemMenuList[i].style.fontSize = '18px';
-        }
-
-        var trayButtonList = document.getElementsByClassName('trayButton');
-        for (var i = 0; i < trayButtonList.length; i++) {
-            trayButtonList[i].style.fontSize = '16px';
-            trayButtonList[i].style.padding = '10%';
-            trayButtonList[i].style.borderBottomLeftRadius = '0px';
-            trayButtonList[i].style.borderTopRightRadius = '5px';
-        }
-
-        sumTray.style.fontSize = '16px';
-        sumContainer.style.fontSize = '16px';
-
-        section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
-
-        if (window.innerHeight - header.getBoundingClientRect().height < 250) {
-            section1.style.height = '250px';
-        }
-
-        traySize = (Math.sqrt((Math.pow(toolContainer.getBoundingClientRect().width, 2)) + (Math.pow(toolContainer.getBoundingClientRect().height, 2)))) * 0.5; 
-
-        menu.style.gap = `unset`;
-        trayControls.style.gap = `unset`;
-
-        if (traySize > (toolContainer.getBoundingClientRect().height * 0.85)) {
-            traySize = toolContainer.getBoundingClientRect().height * 0.85;
-        }
-
-        if (traySize > (toolContainer.getBoundingClientRect().width * 0.7)) {
-            traySize = toolContainer.getBoundingClientRect().width * 0.7;
-        }
-
-        tray.style.width = `${traySize}px`; 
-        tray.style.height = `${traySize}px`;
-
-        sumTray.style.height = `${toolContainer.getBoundingClientRect().height * 0.1}px`;
-        sumTray.style.gap = `${toolContainer.getBoundingClientRect().height * 0.01}px`;
-        trayControls.style.width = `${toolContainer.getBoundingClientRect().width * 0.18}px`;
-        trayControls.style.height = `${trayContainer.getBoundingClientRect().height * 0.8}px`;
-        menu.style.width = `${toolContainer.getBoundingClientRect().width * 0.08}px`;
-        menu.style.height = `${trayContainer.getBoundingClientRect().height * 0.95}px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.width = `unset`;  
-        }
-
-        customizableNumber.style.width = `${traySize * 0.15}px`;
 
     } else {
-        console.log(3);
-        tool.style.flexDirection = 'column';
-        menu.style.flexDirection = 'row';
-        trayControls.style.flexDirection = 'row';
-        trayControls.style.justifyContent = 'center';
-        menu.style.justifyContent = 'center';
-        header.style.height = `60px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.borderTopLeftRadius = '5px';
-            itemMenuList[i].style.borderTopRightRadius = '5px';
-            itemMenuList[i].style.borderBottomLeftRadius = '0px';
-            itemMenuList[i].style.padding = '4%';
-            itemMenuList[i].style.fontSize = '18px';
-        }
-
-        var trayButtonList = document.getElementsByClassName('trayButton');
-        for (var i = 0; i < trayButtonList.length; i++) {
-            trayButtonList[i].style.fontSize = '16px';
-            trayButtonList[i].style.padding = '4%';
-            trayButtonList[i].style.borderBottomLeftRadius = '5px';
-            trayButtonList[i].style.borderTopRightRadius = '0px';
-        }
-
-        sumTray.style.fontSize = '16px';
-        sumContainer.style.fontSize = '16px';
-
-        section1.style.height = `${window.innerHeight - header.getBoundingClientRect().height}px`;
-
-        if (window.innerHeight - header.getBoundingClientRect().height < 420) {
-            section1.style.height = '420px';
-        }
 
         traySize = (Math.sqrt((Math.pow(toolContainer.getBoundingClientRect().width, 2)) + (Math.pow(toolContainer.getBoundingClientRect().height, 2)))) * 0.5;       
-
-        menu.style.gap = `${traySize * 0.03}px`;
-        trayControls.style.gap = `${traySize * 0.06}px`
-
-        if (traySize > (toolContainer.getBoundingClientRect().width * 0.95)) {
-            traySize = toolContainer.getBoundingClientRect().width * 0.95;
+        
+        if (traySize > (toolContainer.getBoundingClientRect().height * 0.85)) {
+            traySize = toolContainer.getBoundingClientRect().height * 0.85;
         }
-
-        if (traySize > (toolContainer.getBoundingClientRect().height * 0.70)) {
-            traySize = toolContainer.getBoundingClientRect().height * 0.70;
+    
+        if (traySize > (toolContainer.getBoundingClientRect().width * 0.7)) {
+            traySize = toolContainer.getBoundingClientRect().width * 0.7;
         }
 
         tray.style.width = `${traySize}px`;
         tray.style.height = `${traySize}px`;
-
-        sumTray.style.height = `${traySize * 0.15}px`;
-        sumTray.style.gap = `${traySize * 0.01}px`;
-        trayControls.style.height = `${traySize * 0.1}px`;
-        trayControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
-        menu.style.height = `${traySize * 0.15}px`;
-        menu.style.width = `${trayContainer.getBoundingClientRect().width}px`;
-
-        var itemMenuList = document.getElementsByClassName('itemMenu');
-        for (var i = 0; i < itemMenuList.length; i++) {
-            itemMenuList[i].style.width = `${menu.getBoundingClientRect().width / 7.2}px`;
-        }
-
-        customizableNumber.style.width = `${traySize * 0.15}px`;
-
-
     }
 
-
-};
+}
 
 function resizeHistoricContainer () {
     section2.style.width = `${tool.getBoundingClientRect().width}px`;
@@ -360,25 +194,15 @@ function resizeHistoricContainer () {
 };
 
 function resizeHistoricControls () {
-
     historicControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
     historicControls.style.height =  `${traySize * 0.1}px`;
     historic.style.borderTopWidth = `${tray.getBoundingClientRect().width / 200}px`;
     historicControls.style.gap = `${traySize * 0.08}px`
-
-    var arrowList = document.getElementsByClassName('arrow');
-    for (var a2 = 0; a2 < arrowList.length; a2++) {
-        arrowList[a2].style.width = `${tray.getBoundingClientRect().width / 30}px`;
-        arrowList[a2].style.height = `${tray.getBoundingClientRect().width / 30}px`;
-        arrowList[a2].style.borderTop = `#444444 ${tray.getBoundingClientRect().width / 150}px solid`;
-        arrowList[a2].style.borderRight = `#444444 ${tray.getBoundingClientRect().width / 150}px solid`;
-    }
-        
-
 };
 
 function fixingElements () {
-    resizeTray();
+    //resizeTray();
+    newResizeTray();
     resizeHistoricContainer();
     resizeHistoricControls();
 
@@ -391,7 +215,6 @@ function fixingElements () {
 };
 
 window.addEventListener("resize", fixingElements);
-window.addEventListener("load", fixingElements);
 
 fixingElements();
 
@@ -773,7 +596,6 @@ function cancelAnimation () {
 
 window.addEventListener("resize", cancelAnimation);
 
-
 function fillSides () {
 
     var itemList = document.getElementsByClassName('item');
@@ -874,14 +696,20 @@ function closeAlertEmpty () {
 }
 
 document.addEventListener('click', function (event) {
-    if (event.target !== alertContainer) {
+    if (event.target !== alertContainer &&
+        event.target !== customizableItem) {
         closeAlert();
     }
 });
 
 function openCustomizableMenu () {
-    if (isJumping == false && isReseting == false) {
-        customizableMenuContainer.style.display = `flex`;
+
+    if (tray.childElementCount <= 3) {
+        if (isJumping == false && isReseting == false) {
+            customizableMenuContainer.style.display = `flex`;
+        }
+    } else {
+        openAlert();
     }
 };
 
@@ -901,6 +729,7 @@ document.addEventListener('click', function (event) {
         document.getElementById('customizableNumber').value = '';
         sideLimits.style.color = '';
         closeCustomizableMenu();
+
     }
 });
 
@@ -911,6 +740,7 @@ document.addEventListener('click', function (event) {
         closeAlertEmpty();
     }
 });
+
 
 function customizableMenuOKPress () {
     var value = document.getElementById('customizableNumber').value;
@@ -963,11 +793,3 @@ document.documentElement.addEventListener("load", function(){
 window.addEventListener("load", function(){
     document.getElementById("loading").style.display = "none";
 });
-
-function hideBar () {
-    setTimeout(function(){
-        window.scrollTo(0, 1);
-    }, 0);
-}
-
-window.addEventListener("load", hideBar);
