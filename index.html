@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogar dados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="body">
+
+    <div id="loading"></div>
+
+    <header id="header">
+        <div id="logo">
+            <strong><span id="logo1">JOGAR DADOS</span></strong>
+        </div>
+    </header>
+
+    <div id="bigBox" class="main">
+
+        <div id="section1">
+
+            <div id="toolContainer">
+                <div id="tool">
+                    <div id="alertContainer">
+                        <div id="alert">
+                            <div id="alertMessage">
+                                A bandeja está cheia!
+                            </div>
+                            <div id="alertClose" class="button" onclick="closeAlert()">
+                                OK
+                            </div>
+                        </div>
+                    </div>
+                    <div id="alertContainerEmpty">
+                        <div id="alertEmpty">
+                            <div id="alertMessageEmpty">
+                                Adicione um item!
+                            </div>
+                            <div id="alertCloseEmpty" class="button" onclick="closeAlertEmpty()">
+                                OK
+                            </div>
+                        </div>
+                    </div>
+                    <div id="customizableMenuContainer">
+                        <div id="customizableMenu">
+                            <div id="customizableMessage">
+                                Número de lados: <div id="sideLimits"><input type="number" id="customizableNumber" maxlength="3"> (2 ➔ 999)</div>
+                            </div>
+                            <div id="customizableMessageButtons">
+                                <div id="customizableMenuOK" class="button" onclick="customizableMenuOKPress()">
+                                    OK
+                                </div>
+                                <div id="customizableMenuClose" class="button" onclick="closeCustomizableMenu()">
+                                    FECHAR
+                                </div>
+                            </div>
+                        </div>  
+                    
+                    </div>
+                    <div id="menuContainer">
+                        <div id='menu'>
+                        <div class="itemMenu button" onclick="addItem(1, 6)"> 6 </div>
+                        <div class="itemMenu button" onclick="addItem(1, 8)"> 8 </div>
+                        <div class="itemMenu button" onclick="addItem(1, 10)"> 10 </div>
+                        <div class="itemMenu button" onclick="addItem(1, 12)"> 12 </div>
+                        <div class="itemMenu button" onclick="addItem(1, 20)"> 20 </div>
+                        <div class="itemMenu button" onclick="openCustomizableMenu()" id="customizableItem"> ? </div>
+                        </div>
+                    </div>
+                    <div id="trayContainer">
+                        <div id="tray" onclick="play()">
+                        </div>
+                        <div id="sumTrayContainer">
+                            <div id="sumTray">TOTAL:
+                                <span id="sumContainer">
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="trayControls">
+                        <div id="refreshTrayContainer" class="button trayButton" onclick="refresh()">
+                            RESET
+                        </div>
+                        <div id="playTrayContainer" class="button trayButton" onclick="play()">
+                            JOGAR
+                        </div>
+                        <div id="trashTrayContainer" class="button trayButton" onclick="trashTray()">
+                            LIMPAR
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="section2">
+            <div id="historicContainer">
+                <div id="historicTitle">HISTÓRICO</div>
+                
+                    <div id="historic">
+
+                    </div>
+                
+            </div>
+            <div id="historicControls">
+
+                <div class="historicButton button" onclick="historicControl('up')">
+                    <div id="arrowUp" class="arrow"></div>
+                </div>
+
+                <div class="historicButton button" id="deleteHistoricContainer" onclick="clearHistoric()">
+                    LIMPAR
+                </div>
+
+                <div class="historicButton arrowContainer button" onclick="historicControl('down')">
+                    <div id="arrowDown" class="arrow"></div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div id="footerContent">©</div>
+    </footer>
+    
+    <script src="script.js"></script>
+
+</body>
+</html>
