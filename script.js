@@ -418,7 +418,6 @@ function addItem (qtd, numberOfSides) {
             }
         }, delay);
         
-            
     }
 };
 
@@ -439,8 +438,8 @@ function jump () {
             angularPosX += vax;
             angularPosY += vay;
 
-            if (linearPosY > (itemSize*0.25)) {
-                linearPosY = itemSize*0.25;
+            if (linearPosY > (traySize * 0.04)) {
+                linearPosY = traySize * 0.04;
                 vy *= -bouncePower;
                 bounced++;
             }
@@ -753,7 +752,7 @@ function customizableMenuOKPress () {
             }, 1000);
         }
     } else {
-        addItem(1, value);
+        addItem(1, value.replace(/^0+/, ''));
         document.getElementById('customizableNumber').value = '';
         sideLimits.style.color = '';
         closeCustomizableMenu();
