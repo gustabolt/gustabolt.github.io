@@ -44,6 +44,7 @@ var trayContainer = document.getElementById('trayContainer');
 var historicTitle = document.getElementById('historicTitle');
 var sumTray = document.getElementById('sumTray');
 var section2 = document.getElementById('section2');
+var section3 = document.getElementById('section3');
 var alertContainer = document.getElementById('alertContainer');
 var alertMessage = document.getElementById('alertMessage');
 var alertClose = document.getElementById('alertClose');
@@ -193,6 +194,10 @@ function resizeHistoricContainer () {
 
 };
 
+function resizeSection3 () {
+    section3.style.width = `${tool.getBoundingClientRect().width}px`;
+}
+
 function resizeHistoricControls () {
     //historicControls.style.width = `${trayContainer.getBoundingClientRect().width * 0.8}px`;
     //historicControls.style.height =  `${traySize * 0.1}px`;
@@ -205,6 +210,7 @@ function fixingElements () {
     newResizeTray();
     resizeHistoricContainer();
     resizeHistoricControls();
+    resizeSection3();
 
     if (sumContainer.firstChild) {
         sumContainer.removeChild(sumContainer.lastChild);

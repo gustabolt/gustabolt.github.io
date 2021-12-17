@@ -9,7 +9,7 @@
 
 html {
     max-width: 100%;
-    overflow-x: hidden;
+
 }
 
 body {
@@ -26,8 +26,6 @@ header {
     display: flex;
     align-items: center;
     width: 100%;
-    display: flex;
-    align-items: center;
     background-color: #F2F2F2;
     border-bottom: solid #444444;
     user-select: none; 
@@ -36,6 +34,24 @@ header {
     -moz-user-select: none; 
     -ms-user-select: none; 
     height: 60px;
+}
+
+#topMenu {
+    justify-self: end;
+    margin-left: auto;
+    padding-right: 30px;
+    font-size: 16px;
+    color: #444444;
+}
+
+.topMenuItem {
+    color: #444444;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.topMenuItem:active {
+    color: #FAFAFA;
 }
 
 #logo {
@@ -113,6 +129,28 @@ header {
     align-items: center;
     border-radius: 5px;
     background-color: #f2f2f2;
+    padding: 2%;
+    
+}
+
+#section3 {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 2%;
+    margin-top: 20px;
+}
+
+#articleContainer {
+    background-color: #F2F2F2;
+    color: #444444;
+    border: solid #c9c8c8;
+}
+
+h1, h2, p {
+    padding: 1%;
+}
+
+article {
     padding: 2%;
 }
 
@@ -310,7 +348,7 @@ input[type=number] {
     width: fit-content;
     color: #444444;
     background-color: #f2f2f2;
-    border: 5px solid #B6B5C7;
+    border: 5px solid #C9C8C8;
     gap: 1px;
     width: 90%;
     max-width: 300px;
@@ -374,7 +412,7 @@ input[type=number] {
     justify-content: center;
     align-items: center;
     position: absolute;
-    border: 3px solid #444444;
+    border: solid #444444;
     background-color:  #fafafa;
     color: #444444;
     letter-spacing: 0;
@@ -537,32 +575,50 @@ input[type=number] {
     height: 250px;
 }
 
-
 .button:hover {
     cursor: pointer;
 }
-
 
 .button:active {
     background-color: #FAFAFA;
 }
 
+a:link {
+text-decoration: none;
+}
 
-footer {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    height: 65px;
+a:visited {
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: none;
+}
+
+a:active {
+text-decoration: none;
 }
 
 #footerContent {
+
     width: 100%;
     text-align: center;
-    padding: 10px 0px 10px 0px;
+    padding: 20px;
     color: #444444;
     border-top: solid #444444;
     background-color: #F2F2F2;
+    font-size: 16px;
+    height: 60px;
+}
 
+.footerItem {
+    color: #444444;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.footerItem:active {
+    color: #FAFAFA;
 }
 
 @media (max-height: 650px) and (orientation: landscape) {
@@ -621,6 +677,9 @@ footer {
     }
     .trayButton {
         padding: 5%;
+        font-size: 16px;
+    }
+    h1, h2, p {
         font-size: 16px;
     }
 }
@@ -721,6 +780,9 @@ footer {
         font-size: 16px;
     }
     #sumContainer {
+        font-size: 16px;
+    }
+    h1, h2, p {
         font-size: 16px;
     }
 }
