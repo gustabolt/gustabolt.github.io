@@ -37,6 +37,7 @@ header {
     -moz-user-select: none; 
     -ms-user-select: none; 
     height: 60px;
+
 }
 
 #topMenu {
@@ -60,15 +61,16 @@ header {
 #logo {
     display: flex;
     align-items: center;
-    gap: 2%;
-    padding: 1.5% 1.5% 1.5% 3%;
     letter-spacing: 3px;
     color: #444444;
+    cursor: pointer;
+    padding-left: 2%;
+    padding-top: 1%;
 }
 
 #logo1 {
     font-size: 22px;
-    cursor: pointer;
+
 }
 
 #bigBox {
@@ -174,8 +176,12 @@ header {
     border: solid #c9c8c8;
 }
 
-h1, h2, p {
+h1, h2, h3, p, li {
     padding: 1%;
+}
+
+ul, ol {
+    padding: 5%;
 }
 
 article {
@@ -814,6 +820,9 @@ footer {
     }
     h1, h2, p {
         font-size: 16px;
+    }
+    .footerItem {
+        padding: 3%;
     }
 }
 
