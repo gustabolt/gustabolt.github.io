@@ -23,9 +23,7 @@ body {
     background-color: #FAFAFA;
     max-width: 100%;
     overflow-x: hidden;
-
     min-height: 100vh;
-
 }
 
 
@@ -40,10 +38,8 @@ header {
     -moz-user-select: none; 
     -ms-user-select: none; 
     height: 60px;
-    padding-left: 2%;
+    padding-left: 40px;
     align-items: center;
-
-
 }
 
 #topMenu {
@@ -128,6 +124,7 @@ header {
     background-color: #f2f2f2;
     padding: 2%;
     height: 100%;
+    box-shadow: 0px 0px 10px #c9c8c8;
 }
 
 #section2 {
@@ -137,7 +134,7 @@ header {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 2%;
-    
+    box-shadow: 0px 0px 10px #c9c8c8;
 }
 
 #section3 {
@@ -146,6 +143,7 @@ header {
     padding: 2%;
     margin-top: 20px;
     margin-bottom: 20px;
+    box-shadow: 0px 0px 10px #c9c8c8;
 }
 
 #mainSection {
@@ -156,7 +154,7 @@ header {
     margin-bottom: 20px;
     width: 100%;
     max-width: 700px;
-
+    box-shadow: 0px 0px 10px #c9c8c8;
 }
 
 #articleContainer {
@@ -189,8 +187,8 @@ article {
 
 #menuContainer {
     display: flex;
-    align-items: center; /* alinhamento vertical */
-    justify-content: center; /*alinhamento horizontal*/
+    align-items: center; 
+    justify-content: center; 
     position: relative;
     z-index: 8;
 }
@@ -223,7 +221,6 @@ article {
     font-size: 30px;
     padding: 10%;
     font-size: 25px;
-
 }
 
 #trayContainer {
@@ -337,7 +334,6 @@ input[type=number] {
     padding: 1%;
     border-radius: 5px;
 }
-
 
 #alert {
     display: flex;
@@ -459,7 +455,6 @@ input[type=number] {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #sumTray {
@@ -559,7 +554,6 @@ input[type=number] {
 .arrow {
     width: 15px;
     height: 15px;
-
 }
 
 #arrowUp {
@@ -764,6 +758,9 @@ footer {
 /*Width*/
 
 @media (max-width: 590px) and (orientation: portrait) {
+    header {
+        padding-left: 30px;
+    }
     #section1 {
         height: 570px;
     }
